@@ -1,5 +1,7 @@
 #!/bin/bash
 
+HDBCLIENT_PATH="/usr/sap/hdbclient"
+
 error(){ 
     echo "ERREUR : invalid or missing parameters !" >&2 
     echo "Use option -h to get help" >&2
@@ -30,7 +32,8 @@ while getopts ":d:s:m:n:u:h" option; do
     esac 
 done
 
-result=$(./hdbsql -U $hdbstore_user -I $script_path)
+result=$($HDBCLIENT_PATH/hdbsql -U $hdbstore_user -I $script_path)
+echo "Result=$resutl"
 
 value="${result##*$'\n'}"
 
