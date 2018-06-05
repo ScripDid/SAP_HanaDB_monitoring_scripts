@@ -1,4 +1,4 @@
-#!/bin/bash
+t:#!/bin/bash
 
 HDBCLIENT_PATH="/usr/sap/hdbclient"
 
@@ -16,7 +16,7 @@ usage(){
 # Missing parameters
 [[ $# -lt 1 ]] && error 
 
-while getopts ":d:s:m:n:u:h" option; do 
+while getopts ":d:s:m:n:t:u:h" option; do 
     case "$option" in 
 	d) dimension=$OPTARG ;;
         s) script_path=$OPTARG ;; 
